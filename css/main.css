@@ -1,0 +1,8 @@
+.playButton{
+    background: image('../Images/Play.png');
+    background-size: cover;
+    width: 50;
+    height: 50;
+    border:none;
+    border-radius: 1000000%;
+}
