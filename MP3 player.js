@@ -5,6 +5,8 @@ class MP3Player {
     
 }
 
-function play(){
-    console.log("Is playing");
+function playSong(){
+    if (!song.isPlaying()) {
+        song.play();
+    }
 }

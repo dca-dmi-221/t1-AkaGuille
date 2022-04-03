@@ -1,4 +1,26 @@
 let frame1, frame2;
+let songDefault = [];
+let currentSongIndex = 0;
+let song = songDefault[0].link;
+function preload() {
+  soundFormats('mp3', 'ogg');
+  songDefault =[
+    {
+      name: "Flight Of The Bumblebee",
+      link: loadSound("../songs/Flight Of The Bumblebee.mp3")
+    },
+
+    {
+      name: "Ride Of The Valkyries",
+      link: loadSound("../songs/Ride Of The Valkyries.mp3")
+    },
+
+    {
+      name: "William Tell Overture",
+      link: loadSound("../songs/William Tell Overture.mp3")
+    },
+  ]
+}
 
 function setup() {
   createCanvas(1280, 720);
@@ -8,10 +30,9 @@ function setup() {
   //Buttons
   const bPlay = createButton("PLAY");
   bPlay.position(620, 626);
-  bPlay.mousePressed(play);
+  bPlay.mousePressed(playSong);
 
-  const bPause = createButton("PAUSE");
-  bPause.position(620, 626);
+  
 
   const bNext = createButton("NEXT");
   bNext.position(700, 626);
