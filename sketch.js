@@ -1,5 +1,4 @@
 let frame1, frame2;
-let play, pause, next, previous;
 
 function setup() {
   createCanvas(1280, 720);
@@ -7,10 +6,18 @@ function setup() {
   frame2 = loadImage("../Images/Frame2.png");
 
   //Buttons
-  const play = createButton('');
-  play.elt.className = 'playButton';
-  play.position(620, 626);
+  const bPlay = createButton("PLAY");
+  bPlay.position(620, 626);
+  bPlay.mousePressed(play);
 
+  const bPause = createButton("PAUSE");
+  bPause.position(620, 626);
+
+  const bNext = createButton("NEXT");
+  bNext.position(700, 626);
+
+  const bPrevious = createButton("PREVIOUS");
+  bPrevious.position(520, 626);
 
 }
 
@@ -20,5 +27,6 @@ function draw() {
   image(frame1, 640, 360);
   image(frame2, 640, 360);
   imageMode(CORNER);
+
 }
 
