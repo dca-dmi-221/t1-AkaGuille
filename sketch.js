@@ -1,5 +1,5 @@
-let frame1 = new BackgroundMP3((loadImage("../Images/Frame1.png")), 640, 360);
-let frame2 = new BackgroundMP3((loadImage("../Images/Frame2.png")), 640, 360);
+let frame1;
+let frame2;
 let songDefault = [];
 let currentSongIndex = 1;
 let song;
@@ -27,7 +27,10 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1280, 720); 
+  createCanvas(1280, 720);
+  frame1 = new App (loadImage("../Images/Frame1.png"), 640, 360);
+  frame2 = new App (loadImage("../Images/Frame2.png"), 640, 360);
+
   song = songDefault[0].link;
 
   //Buttons
@@ -46,6 +49,15 @@ function setup() {
   const bPrevious = createButton("PREVIOUS");
   bPrevious.position(400, 626);
   bPrevious.mousePressed(previousSong);
+
+  const bFoward = createButton("+15");
+  bFoward.position(800, 626);
+  bFoward.mousePressed(forwardSong);
+
+  const bBack = createButton("-15");
+  bBack.position(300, 626);
+  bBack.mousePressed(backSong);
+
 
   //Slider
   slider = createSlider(0, 1, 0.5, 0.01);

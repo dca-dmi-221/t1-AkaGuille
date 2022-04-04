@@ -44,4 +44,16 @@ function previousSong(){
     console.log(currentSongIndex)
 }
 
+function forwardSong() {
+    if (song.isPlaying()) {
+        song.jump(song.currentTime() + 15);
+    }
+}
+
+function backSong() {
+    if (song.isPlaying()) {
+        song.jump(song.currentTime() -15);
+    }
+}
+
 
