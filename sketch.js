@@ -50,10 +50,9 @@ function setup() {
   bPrevious.mousePressed(previousSong);
 
   //Slider
-  slider = createSlider(0, 255, 100);
+  slider = createSlider(0, 1, 0.5, 0.01);
   slider.style('width', "100px");
   slider.position(1000, 626);
-  
 
 }
 
@@ -63,6 +62,7 @@ function draw() {
   image(frame1, 640, 360);
   image(frame2, 640, 360);
   imageMode(CORNER);
+  song.setVolume(slider.value());
 
 }
 

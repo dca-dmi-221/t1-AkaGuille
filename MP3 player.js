@@ -30,7 +30,18 @@ function nextSong(){
     console.log(currentSongIndex)
 }
 
-function previousSong() {
-
+function previousSong(){
+    song.stop();
+    if (currentSongIndex > 1) {
+        song = songDefault[currentSongIndex-2].link;
+        currentSongIndex = currentSongIndex-1;
+    } else {
+        let totalSongs = songDefault.length;
+        song = songDefault[totalSongs-1].link;
+        currentSongIndex = totalSongs;
+    }
+    song.play();
+    console.log(currentSongIndex)
 }
+
 
