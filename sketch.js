@@ -1,5 +1,4 @@
-let frame1;
-let frame2;
+let frame1, frame2;
 let songDefault = [];
 let currentSongIndex = 1;
 let song;
@@ -28,41 +27,29 @@ function preload() {
 
 function setup() {
   createCanvas(1280, 720);
-  frame1 = new App (loadImage("../Images/Frame1.png"), 640, 360);
-  frame2 = new App (loadImage("../Images/Frame2.png"), 640, 360);
+
+  //Frames
+  frame1 = new App ({
+    image: loadImage("../Images/Frame1.png"), 
+    x: 640, 
+    y: 360});
+  frame2 = new App ({
+    image: loadImage("../Images/Frame2.png"), 
+    x: 640, 
+    y: 360});
 
   song = songDefault[0].link;
 
   //Buttons
-  const bPlay = createButton("PLAY");
-  bPlay.position(600, 626);
-  bPlay.mousePressed(playSong);
+  const bPlay = createButton("PLAY").position(600, 626).mousePressed(playSong);
+  const bPause = createButton("PAUSE").position(500, 626).mousePressed(pauseSong);
+  const bNext = createButton("NEXT").position(700, 626).mousePressed(nextSong);
+  const bPrevious = createButton("PREVIOUS").position(400, 626).mousePressed(previousSong);
+  const bFoward = createButton("+15").position(800, 626).mousePressed(forwardSong);
+  const bBack = createButton("-15").position(300, 626).mousePressed(backSong);
 
-  const bPause = createButton("PAUSE");
-  bPause.position(500, 626);
-  bPause.mousePressed(pauseSong);
-
-  const bNext = createButton("NEXT");
-  bNext.position(700, 626);
-  bNext.mousePressed(nextSong);
-
-  const bPrevious = createButton("PREVIOUS");
-  bPrevious.position(400, 626);
-  bPrevious.mousePressed(previousSong);
-
-  const bFoward = createButton("+15");
-  bFoward.position(800, 626);
-  bFoward.mousePressed(forwardSong);
-
-  const bBack = createButton("-15");
-  bBack.position(300, 626);
-  bBack.mousePressed(backSong);
-
-
-  //Slider
-  slider = createSlider(0, 1, 0.5, 0.01);
-  slider.style('width', "100px");
-  slider.position(1000, 626);
+  //Sliders
+  slider = createSlider(0, 1, 0.5, 0.01).style('width', "100px").position(1000, 626);
 
 }
 
