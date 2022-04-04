@@ -1,4 +1,5 @@
-let frame1, frame2;
+let frame1 = new BackgroundMP3((loadImage("../Images/Frame1.png")), 640, 360);
+let frame2 = new BackgroundMP3((loadImage("../Images/Frame2.png")), 640, 360);
 let songDefault = [];
 let currentSongIndex = 1;
 let song;
@@ -26,10 +27,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1280, 720);
-  frame1 = loadImage("../Images/Frame1.png");
-  frame2 = loadImage("../Images/Frame2.png");
-
+  createCanvas(1280, 720); 
   song = songDefault[0].link;
 
   //Buttons
@@ -58,10 +56,8 @@ function setup() {
 
 function draw() {
   background(220);
-  imageMode(CENTER);
-  image(frame1, 640, 360);
-  image(frame2, 640, 360);
-  imageMode(CORNER);
+  frame1.show();
+  frame2.show();
   song.setVolume(slider.value());
 
 }
