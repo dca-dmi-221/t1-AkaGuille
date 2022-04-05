@@ -1,59 +1,68 @@
 class MP3Player {
-    constructor(){
+    constructor(playlist, slider) {
+        this.currentSongIndex = 1;
+        this.playlist = playlist;
+        this.song = playlist.songs[this.currentSongIndex].file;
+        this.slider = slider;
     }
 
-    
-}
-
-function playSong(){
-    if (!song.isPlaying()) {
-        song.play();
+    showSlider() {
+        this.song.setVolume(this.slider.value());
     }
-}
 
-function pauseSong(){
-    if (song.isPlaying()) {
-        song.pause();
+    playSong() {
+        if (!this.song.isPlaying()) {
+            this.song.play();
+        }
     }
-}
 
-function nextSong(){
-    song.stop();
-    if (currentSongIndex < songDefault.length) {
-        song = songDefault[currentSongIndex++].link;
-        currentSongIndex = currentSongIndex++;
-    } else {
-        song = songDefault[0].link;
-        currentSongIndex = 1;
+    stopSong() {
+        this.song.stop();
     }
-    song.play();
-    console.log(currentSongIndex)
-}
 
-function previousSong(){
-    song.stop();
-    if (currentSongIndex > 1) {
-        song = songDefault[currentSongIndex-2].link;
-        currentSongIndex = currentSongIndex-1;
-    } else {
-        let totalSongs = songDefault.length;
-        song = songDefault[totalSongs-1].link;
-        currentSongIndex = totalSongs;
+    pauseSong() {
+        if (this.song.isPlaying()) {
+            this.song.pause();
+        }
     }
-    song.play();
-    console.log(currentSongIndex)
-}
 
-function forwardSong() {
-    if (song.isPlaying()) {
-        song.jump(song.currentTime() + 15);
+    nextSong() {
+        this.stopSong();
+        if (this.currentSongIndex < this.playlist.songs.length) {
+            this.song = this.playlist.songs[this.currentSongIndex++].file;
+            this.currentSongIndex = this.currentSongIndex++;
+        } else {
+            this.song = this.playlist.songs[0].file;
+            this.currentSongIndex = 0;
+        }
+        this.playSong();
     }
-}
 
-function backSong() {
-    if (song.isPlaying()) {
-        song.jump(song.currentTime() -15);
+    previousSong() {
+        this.stopSong();
+        if (this.currentSongIndex > 0) {
+            song = songDefault[currentSongIndex - 2].file;
+            this.currentSongIndex = this.currentSongIndex - 1;
+        } else {
+            let totalSongs = songDefault.length;
+            song = songDefault[totalSongs - 1].file;
+            this.currentSongIndex = this.playlist.length;
+        }
+        this.playSong();
+        console.log(this.currentSongIndex)
     }
+
+    forwardSong() {
+        if (this.song.isPlaying()) {
+            this.song.jump(this.song.currentTime() + 15);
+        }
+    }
+
+    backSong() {
+        if (this.song.isPlaying()) {
+            this.song.jump(this.song.currentTime() - 15);
+        }
+    }
+
+
 }
-
-
