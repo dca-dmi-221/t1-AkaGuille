@@ -1,6 +1,9 @@
 class MP3Player {
-    constructor(playlist, slider) {
-        this.currentSongIndex = 1;
+    constructor({
+        playlist,
+        slider
+    }) {
+        this.currentSongIndex = 0;
         this.playlist = playlist;
         this.song = playlist.songs[this.currentSongIndex].file;
         this.slider = slider;
@@ -30,9 +33,9 @@ class MP3Player {
         this.stopSong();
         if (this.currentSongIndex < this.playlist.songs.length) {
             this.song = this.playlist.songs[this.currentSongIndex++].file;
-            this.currentSongIndex = this.currentSongIndex++;
+            console.log(this.currentSongIndex);
         } else {
-            this.song = this.playlist.songs[0].file;
+            //this.song = this.playlist.songs[0].file;
             this.currentSongIndex = 0;
         }
         this.playSong();
@@ -41,12 +44,12 @@ class MP3Player {
     previousSong() {
         this.stopSong();
         if (this.currentSongIndex > 0) {
-            song = songDefault[currentSongIndex - 2].file;
+            song = this.playlist.songs[currentSongIndex - 2].file;
             this.currentSongIndex = this.currentSongIndex - 1;
         } else {
-            let totalSongs = songDefault.length;
-            song = songDefault[totalSongs - 1].file;
-            this.currentSongIndex = this.playlist.length;
+            let totalSongs = this.playlist.songs.length;
+            song = this.playlist.songs[totalSongs - 1].file;
+            this.currentSongIndex = this.playlist.songs.length;
         }
         this.playSong();
         console.log(this.currentSongIndex)

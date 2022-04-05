@@ -14,6 +14,7 @@ let duration2;
 let duration3;
 let slider;
 let player;
+let volumeUp, volumeDown, volumeMute;
 
 
 function preload() {
@@ -34,7 +35,27 @@ function preload() {
     x: 640,
     y: 360
   });
+
+  volumeUp = new App({
+    image: loadImage("../Images/VolumeUp.png"),
+    x: 980,
+    y: 626,
+  });
+
+  volumeMute = new App({
+    image: loadImage("../Images/VolumeMute.png"),
+    x: 980,
+    y: 626,
+  });
+
+  volumeDown = new App({
+    image: loadImage("../Images/VolumeDown.png"),
+    x: 980,
+    y: 626,
+  });
 }
+
+
 
 function setup() {
   createCanvas(1280, 720);
@@ -47,22 +68,35 @@ function setup() {
   songDefault2 = new Song("Ride Of The Valkyries", duration2, file2);
   songDefault3 = new Song("William Tell Overture", duration3, file3);
 
-  allSongs = new Playlist('default');
+  allSongs = new Playlist({
+    name: 'default'
+  });
   allSongs.add(songDefault1);
   allSongs.add(songDefault2);
   allSongs.add(songDefault3);
 
-  defaultPlaylist1 = new Playlist('clasica');
+  console.log(allSongs);
+
+  defaultPlaylist1 = new Playlist({
+    name: 'Clasica'
+  });
   defaultPlaylist1.add(songDefault1);
 
-  defaultPlaylist2 = new Playlist('rock');
+  defaultPlaylist2 = new Playlist({
+    name: 'Rock'
+  });
   defaultPlaylist2.add(songDefault2);
 
-  defaultPlaylist3 = new Playlist('pop');
+  defaultPlaylist3 = new Playlist({
+    name: 'Pop'
+  });
   defaultPlaylist3.add(songDefault3);
 
   slider = createSlider(0, 1, 0.5, 0.01).style('width', "100px").position(1000, 626);
-  player = new MP3Player(allSongs, slider);
+  player = new MP3Player({
+    playlist: allSongs,
+    slider: slider
+  });
 
   //Buttons
   //Problem fixed with the monitor Daniel Martinez
@@ -91,10 +125,10 @@ function setup() {
 
 }
 
-
 function draw() {
   background(220);
   frame1.show();
   frame2.show();
   player.showSlider();
+
 }
