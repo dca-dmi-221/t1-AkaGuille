@@ -1,8 +1,107 @@
-.playButton{
-    background: url("../Images/Play.png");
+.play-Button{
+    background-image: url("../Images/Play.png");
     background-size: cover;
-    width: 1000;
-    height: 1000;
+    width: 40px;
+    height: 40px;
     border: none;
     border-radius: 100%;
-}   
+} 
+
+.pause-Button{
+    background-image: url("../Images/Pause.png");
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 100%;
+}
+
+.next-Button{
+    background-image: url("../Images/Next.png");
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 100%;
+}
+
+.previous-Button{
+    background-image: url("../Images/Previous.png");
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 100%;
+}
+
+.moreFifteen-Button{
+    background-image: url("../Images/moreTen.png");
+    background-size: cover;
+    width: 25px;
+    height: 30px;
+    border: none;
+    border-radius: 100%;
+}
+
+.lessFifteen-Button{
+    background-image: url("../Images/lessTen.png");
+    background-size: cover;
+    width: 25px;
+    height: 30px;
+    border: none;
+    border-radius: 100%;
+}
+
+.stop-Button{
+    background-image: url("../Images/Stop.png");
+    background-size: cover;
+    width: 25px;
+    height: 30px;
+    border: none;
+    border-radius: 100%;
+}
+
+.allsongs-Button{
+    background-image: url("../Images/AllSongsButton.png");
+    background-size: cover;
+    width: 285px;
+    height: 55px;
+    border: none;
+    border-radius: 0%;
+}
+
+.rap-Button{
+    background-image: url("../Images/RapButton.png");
+    background-size: cover;
+    width: 285px;
+    height: 55px;
+    border: none;
+    border-radius: 0%;
+}
+
+.bachata-Button{
+    background-image: url("../Images/BachataButton.png");
+    background-size: cover;
+    width: 285px;
+    height: 55px;
+    border: none;
+    border-radius: 0%;
+}
+
+.soundtrack-Button{
+    background-image: url("../Images/SoundtracksButton.png");
+    background-size: cover;
+    width: 285px;
+    height: 55px;
+    border: none;
+    border-radius: 0%;
+}
+
+.btn{
+    background-color: white;
+    color: blue;
+    outline: none;
+    border: 1px solid blue;
+    padding: 20px;
+    border-radius: 16px;
+}

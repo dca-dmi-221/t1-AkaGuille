@@ -7,6 +7,7 @@ class MP3Player {
         this.playlist = playlist;
         this.song = playlist.songs[this.currentSongIndex].file;
         this.slider = slider;
+        this.btns = [];
     }
 
     showSlider() {
@@ -31,25 +32,26 @@ class MP3Player {
 
     nextSong() {
         this.stopSong();
-        if (this.currentSongIndex < this.playlist.songs.length) {
-            this.song = this.playlist.songs[this.currentSongIndex++].file;
+        if (this.currentSongIndex == this.playlist.songs.length - 1) {
+            this.currentSongIndex = 0;
+            this.song = this.playlist.songs[this.currentSongIndex].file;
             console.log(this.currentSongIndex);
         } else {
-            //this.song = this.playlist.songs[0].file;
-            this.currentSongIndex = 0;
+            this.currentSongIndex++;
+            this.song = this.playlist.songs[this.currentSongIndex].file;
+            console.log(this.currentSongIndex);
         }
         this.playSong();
     }
 
     previousSong() {
         this.stopSong();
-        if (this.currentSongIndex > 0) {
-            song = this.playlist.songs[currentSongIndex - 2].file;
+        if (this.currentSongIndex !== 0) {
             this.currentSongIndex = this.currentSongIndex - 1;
-        } else {
-            let totalSongs = this.playlist.songs.length;
-            song = this.playlist.songs[totalSongs - 1].file;
-            this.currentSongIndex = this.playlist.songs.length;
+            this.song = this.playlist.songs[this.currentSongIndex].file;
+        } else if (this.currentSongIndex == 0) {
+            this.currentSongIndex = this.playlist.songs.length - 1;
+            this.song = this.playlist.songs[this.currentSongIndex].file;
         }
         this.playSong();
         console.log(this.currentSongIndex)
@@ -66,6 +68,41 @@ class MP3Player {
             this.song.jump(this.song.currentTime() - 15);
         }
     }
+
+    showSongs() {
+
+        this.deleteBtn()
+        console.log(this.playlist.songs.length)
+        for (let i = 0; i < this.playlist.songs.length; i++) {
+            const song = this.playlist.songs[i];
+            console.log(i)
+
+            this.btns.push(
+                createButton(song.name).position(500, 50 + (50 * i)).class("btn").mousePressed(() => {
+                    this.stopSong();
+                    this.song = song.file;
+                    this.currentSongIndex = i;
+                    this.playSong();
+                    console.log(this.song)
+                })
+            );
+
+        }
+    }
+
+    deleteBtn() {
+        this.btns.forEach(btn => {
+            btn.hide()
+        });
+    }
+
+
+
+    set changePlaylist(newPlaylist) {
+        this.playlist = newPlaylist;
+    }
+
+
 
 
 }
