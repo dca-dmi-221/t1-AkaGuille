@@ -1,6 +1,7 @@
 .play-Button{
     background-image: url("../Images/Play.png");
     background-size: cover;
+    background-color: #598FC2;
     width: 40px;
     height: 40px;
     border: none;
@@ -10,6 +11,7 @@
 .pause-Button{
     background-image: url("../Images/Pause.png");
     background-size: cover;
+    background-color: #598FC2;
     width: 40px;
     height: 40px;
     border: none;
@@ -19,82 +21,82 @@
 .next-Button{
     background-image: url("../Images/Next.png");
     background-size: cover;
+    background-color: #518ABF;
     width: 25px;
     height: 25px;
     border: none;
-    border-radius: 100%;
 }
 
 .previous-Button{
     background-image: url("../Images/Previous.png");
     background-size: cover;
+    background-color: #5A90C2 ;
     width: 25px;
     height: 25px;
     border: none;
-    border-radius: 100%;
 }
 
 .moreFifteen-Button{
     background-image: url("../Images/moreTen.png");
     background-size: cover;
-    width: 25px;
+    background-color: #4883BC;
+    width: 30px;
     height: 30px;
     border: none;
-    border-radius: 100%;
 }
 
 .lessFifteen-Button{
     background-image: url("../Images/lessTen.png");
     background-size: cover;
-    width: 25px;
+    background-color: #5A90C2;
+    width: 30px;
     height: 30px;
     border: none;
-    border-radius: 100%;
 }
 
 .stop-Button{
     background-image: url("../Images/Stop.png");
     background-size: cover;
-    width: 25px;
-    height: 30px;
+    background-color: #6195C5;
+    width: 40px;
+    height: 40px;
     border: none;
     border-radius: 100%;
 }
 
 .allsongs-Button{
     background-image: url("../Images/AllSongsButton.png");
-    background-size: cover;
-    width: 285px;
-    height: 55px;
+    background-size: contain;
+    width: 270px;
+    height: 40px;
     border: none;
     border-radius: 0%;
 }
 
 .rap-Button{
     background-image: url("../Images/RapButton.png");
-    background-size: cover;
-    width: 285px;
-    height: 55px;
+    background-size: contain;
+    width: 270px;
+    height: 40px;
     border: none;
     border-radius: 0%;
 }
 
 .bachata-Button{
     background-image: url("../Images/BachataButton.png");
-    background-size: cover;
-    width: 285px;
-    height: 55px;
+    background-size: contain;
+    width: 270px;
+    height: 40px;
     border: none;
     border-radius: 0%;
 }
 
 .soundtrack-Button{
     background-image: url("../Images/SoundtracksButton.png");
-    background-size: cover;
-    width: 285px;
-    height: 55px;
+    background-size: contain;
+    width: 270px;
+    height: 40px;
     border: none;
-    border-radius: 0%;
 }
 
 .btn{

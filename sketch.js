@@ -193,9 +193,10 @@ function setup() {
   });
   bBack.elt.className = "lessFifteen-Button";
 
-  const bStop = createButton("STOP").position(200, 626).mousePressed(() => {
+  const bStop = createButton("").position(200, 626).mousePressed(() => {
     player.stopSong()
   });
+  bStop.elt.className = "stop-Button";
 
   const bAllSongs = createButton("").position(20, 100).mousePressed(() => {
     player.changePlaylist = allSongs;
@@ -234,7 +235,6 @@ function draw() {
   frame1.show();
   frame2.show();
   player.showSlider();
-
   volumeUp.show();
 
 }
