@@ -13,7 +13,7 @@ class MP3Player {
     showCurrentSong() {
         textAlign(RIGHT);
         textSize(20);
-        text(this.song.name, 300, 800)
+        text(this.song.name, 300, 800);
 
     }
 
