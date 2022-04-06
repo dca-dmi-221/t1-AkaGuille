@@ -156,44 +156,42 @@ function setup() {
 
   player = new MP3Player({
     playlist: allSongs,
-    slider: slider
+    slider: slider,
   });
-
-  console.log(player, "----------------------------------");
 
   //Buttons
 
-  const bPlay = createButton("").position(600, 626).mousePressed(() => {
+  const bPlay = createButton("").position(649, 639).mousePressed(() => {
     player.playSong();
   });
   bPlay.elt.className = "play-Button";
 
-  const bPause = createButton("").position(500, 626).mousePressed(() => {
+  const bPause = createButton("").position(591, 639).mousePressed(() => {
     player.pauseSong()
   });
   bPause.elt.className = "pause-Button";
 
-  const bNext = createButton("").position(700, 626).mousePressed(() => {
+  const bNext = createButton("").position(707, 646).mousePressed(() => {
     player.nextSong()
   });
   bNext.elt.className = "next-Button";
 
-  const bPrevious = createButton("").position(400, 626).mousePressed(() => {
+  const bPrevious = createButton("").position(548, 646).mousePressed(() => {
     player.previousSong()
   });
   bPrevious.elt.className = "previous-Button";
 
-  const bFoward = createButton("").position(800, 626).mousePressed(() => {
+  const bFoward = createButton("").position(779, 632).mousePressed(() => {
     player.forwardSong()
   });
   bFoward.elt.className = "moreFifteen-Button";
 
-  const bBack = createButton("").position(300, 626).mousePressed(() => {
+  const bBack = createButton("").position(451, 632).mousePressed(() => {
     player.backSong()
   });
   bBack.elt.className = "lessFifteen-Button";
 
-  const bStop = createButton("").position(200, 626).mousePressed(() => {
+  const bStop = createButton("").position(35, 639).mousePressed(() => {
     player.stopSong()
   });
   bStop.elt.className = "stop-Button";

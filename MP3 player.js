@@ -1,13 +1,20 @@
 class MP3Player {
     constructor({
         playlist,
-        slider
+        slider,
     }) {
         this.currentSongIndex = 0;
         this.playlist = playlist;
         this.song = playlist.songs[this.currentSongIndex].file;
         this.slider = slider;
         this.btns = [];
+    }
+
+    showCurrentSong() {
+        textAlign(RIGHT);
+        textSize(20);
+        text(this.song.name, 300, 800)
+
     }
 
     showSlider() {
@@ -70,20 +77,16 @@ class MP3Player {
     }
 
     showSongs() {
-
         this.deleteBtn()
         console.log(this.playlist.songs.length)
         for (let i = 0; i < this.playlist.songs.length; i++) {
             const song = this.playlist.songs[i];
-            console.log(i)
-
             this.btns.push(
-                createButton(song.name).position(500, 50 + (50 * i)).class("btn").mousePressed(() => {
+                createButton(song.name).position(350, 100 + (80 * i)).class("btn").mousePressed(() => {
                     this.stopSong();
                     this.song = song.file;
                     this.currentSongIndex = i;
                     this.playSong();
-                    console.log(this.song)
                 })
             );
 
