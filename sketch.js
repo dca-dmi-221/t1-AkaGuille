@@ -55,30 +55,30 @@ function preload() {
 
   //Frames
   frame1 = new App({
-    image: loadImage("../Images/Frame1.png"),
+    image: loadImage("./Images/Frame1.png"),
     x: 640,
     y: 360
   });
   frame2 = new App({
-    image: loadImage("../Images/Frame2.png"),
+    image: loadImage("./Images/Frame2.png"),
     x: 640,
     y: 360
   });
 
   volumeUp = new App({
-    image: loadImage("../Images/VolumeUp.png"),
+    image: loadImage("./Images/VolumeUp.png"),
     x: 980,
     y: 635,
   });
 
   volumeMute = new App({
-    image: loadImage("../Images/VolumeMute.png"),
+    image: loadImage("./Images/VolumeMute.png"),
     x: 980,
     y: 626,
   });
 
   volumeDown = new App({
-    image: loadImage("../Images/VolumeDown.png"),
+    image: loadImage("./Images/VolumeDown.png"),
     x: 980,
     y: 626,
   });
